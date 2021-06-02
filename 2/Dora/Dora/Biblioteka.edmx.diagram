@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="44fa88b65a534f45971115c14c674ce9" Name="Diagram1" ZoomLevel="89" >
+        <EntityTypeShape EntityType="FurnitureDB.Osoba" Width="1.5" PointX="8.375" PointY="7.125" />
+        <EntityTypeShape EntityType="FurnitureDB.Clan" Width="1.5" PointX="5.5" PointY="6.5" />
+        <EntityTypeShape EntityType="FurnitureDB.Clanarina" Width="1.5" PointX="0.875" PointY="0.75" />
+        <EntityTypeShape EntityType="FurnitureDB.Bibliotekar" Width="1.5" PointX="3.375" PointY="0.75" />
+        <EntityTypeShape EntityType="FurnitureDB.Biblioteka" Width="1.5" PointX="2.875" PointY="3.625" />
+        <EntityTypeShape EntityType="FurnitureDB.Knjiga" Width="1.5" PointX="5.375" PointY="0.75" />
+        <EntityTypeShape EntityType="FurnitureDB.Izdanje" Width="1.5" PointX="0.5" PointY="5.5" />
+        <EntityTypeShape EntityType="FurnitureDB.Izdavac" Width="1.5" PointX="11" PointY="4.75" />
+        <EntityTypeShape EntityType="FurnitureDB.Primerak" Width="1.5" PointX="7.375" PointY="0.75" />
+        <EntityTypeShape EntityType="FurnitureDB.Za_Iznajmljivanje" Width="1.5" PointX="0.75" PointY="7.75" />
+        <EntityTypeShape EntityType="FurnitureDB.Za_Prodaju" Width="1.5" PointX="9.125" PointY="3.375" />
+        <AssociationConnector Association="FurnitureDB.OsobaClan" />
+        <AssociationConnector Association="FurnitureDB.ClanClanarina" />
+        <AssociationConnector Association="FurnitureDB.ClanarinaBibliotekar" />
+        <AssociationConnector Association="FurnitureDB.BibliotekaBibliotekar" />
+        <AssociationConnector Association="FurnitureDB.BibliotekaClan" />
+        <AssociationConnector Association="FurnitureDB.BibliotekaKnjiga" />
+        <AssociationConnector Association="FurnitureDB.KnjigaIzdanje" />
+        <AssociationConnector Association="FurnitureDB.IzdanjeIzdavac" />
+        <AssociationConnector Association="FurnitureDB.IzdanjePrimerak" />
+        <AssociationConnector Association="FurnitureDB.PrimerakZa_Iznajmljivanje" />
+        <AssociationConnector Association="FurnitureDB.PrimerakZa_Prodaju" />
+        <AssociationConnector Association="FurnitureDB.Za_IznajmljivanjeClan" />
+        <AssociationConnector Association="FurnitureDB.Za_ProdajuOsoba" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

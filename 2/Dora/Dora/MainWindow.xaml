@@ -1,0 +1,71 @@
+﻿<Window x:Class="Dora.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Dora"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <DataGrid AutoGenerateColumns="True" Name="bibliotekeGR" Margin="144,88,183,123">
+
+        </DataGrid>
+
+        <DataGrid Visibility="Hidden" AutoGenerateColumns="True" Name="bibliotekariGR" Margin="144,88,183,123">
+
+        </DataGrid>
+
+        <DataGrid AutoGenerateColumns="True" Name="clanGR" Margin="144,88,183,123">
+
+        </DataGrid>
+        
+        <DataGrid AutoGenerateColumns="True" Name="clanarinaGR" Margin="144,88,183,123">
+
+        </DataGrid>
+        
+        <DataGrid AutoGenerateColumns="True" Name="izdanjeGR" Margin="144,88,183,123">
+
+            
+        </DataGrid>
+        
+        <DataGrid AutoGenerateColumns="True" Name="izdavacGR" Margin="144,88,183,123">
+
+        </DataGrid>
+        
+        <DataGrid AutoGenerateColumns="True" Name="knjigaGR" Margin="144,88,183,123">
+
+        </DataGrid>
+        
+        <DataGrid AutoGenerateColumns="True" Name="osobaGR" Margin="144,88,183,123">
+
+        </DataGrid>
+        
+        <DataGrid AutoGenerateColumns="True" Name="primerakGR" Margin="144,88,183,123">
+
+        </DataGrid>
+        
+        <DataGrid AutoGenerateColumns="True" Name="za_iznajmljivanjeGR" Margin="144,88,183,123">
+
+        </DataGrid>
+        
+        <DataGrid AutoGenerateColumns="True" Name="za_prodajuGR" Margin="144,88,183,123">
+
+        </DataGrid>
+        
+        <Button Content="bibliotekari" Name="bibliotekariBTN" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="99,18,0,0" Click="bibliotekariBTN_Click"/>
+        <Button Content="biblioteka" Name="bibliotekeBTN" HorizontalAlignment="Left" VerticalAlignment="Top" Width="76" Margin="18,18,0,0" Click="bibliotekeBTN_Click"/>
+        <Button Content="clan" Name="clanBTN" HorizontalAlignment="Left" VerticalAlignment="Top" Width="76" Margin="110,43,0,0" Click="clanBTN_Click"/>
+        <Button Content="clanarina" Name="clanarinaBTN" HorizontalAlignment="Left" VerticalAlignment="Top" Width="76" Margin="18,43,0,0" Click="clanarinaBTN_Click"/>
+        <Button Content="izdanje" Name="izdanjeBTN" HorizontalAlignment="Left" VerticalAlignment="Top" Width="76" Margin="682,18,0,0" Click="izdanjeBTN_Click"/>
+        <Button Content="izdavac" Name="izdavacBTN" HorizontalAlignment="Left" VerticalAlignment="Top" Width="76" Margin="601,18,0,0" Click="izdavacBTN_Click"/>
+        <Button Content="knjiga" Name="knjigaBTN" HorizontalAlignment="Left" VerticalAlignment="Top" Width="76" Margin="520,18,0,0" Click="knjigaBTN_Click" RenderTransformOrigin="4.491,0.217"/>
+        <Button Content="osoba" Name="osobaBTN" HorizontalAlignment="Left" VerticalAlignment="Top" Width="76" Margin="439,18,0,0" Click="osobaBTN_Click"/>
+        <Button Content="primerak" Name="primerakBTN" HorizontalAlignment="Left" VerticalAlignment="Top" Width="76" Margin="358,18,0,0" Click="primerakBTN_Click"/>
+        <Button Content="za_iznajmljivanje" Name="za_iznajmljivanjeBTN" HorizontalAlignment="Left" VerticalAlignment="Top" Width="76" Margin="277,18,0,0" Click="za_iznajmljivanjeBTN_Click"/>
+        <Button Content="za_prodaju" Name="za_prodaju" HorizontalAlignment="Left" VerticalAlignment="Top" Width="76" Margin="188,18,0,0" Click="za_prodaju_Click"/>
+        <Button Content="Dodaj" Name="dodajBTN" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="111,337,0,0" Click="dodajBTN_Click"/>
+        <Button Content="Izmeni" Name="izmeniBTN" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="261,337,0,0"/>
+        <Button Content="Obrisi" Name="obrisiBTN" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="427,337,0,0" Click="obrisiBTN_Click"/>
+
+    </Grid>
+</Window>

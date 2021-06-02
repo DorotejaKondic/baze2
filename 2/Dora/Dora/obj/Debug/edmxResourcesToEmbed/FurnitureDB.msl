@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="FurnitureDBStoreContainer" CdmEntityContainer="FurnitureDBContainer">
+    <EntitySetMapping Name="Osobas">
+      <EntityTypeMapping TypeName="IsTypeOf(FurnitureDB.Osoba)">
+        <MappingFragment StoreEntitySet="Osobas">
+          <ScalarProperty Name="JMBG" ColumnName="JMBG" />
+          <ScalarProperty Name="Ime" ColumnName="Ime" />
+          <ScalarProperty Name="Prezime" ColumnName="Prezime" />
+          <ScalarProperty Name="Mejl" ColumnName="Mejl" />
+          <ScalarProperty Name="Adresa" ColumnName="Adresa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Clans">
+      <EntityTypeMapping TypeName="IsTypeOf(FurnitureDB.Clan)">
+        <MappingFragment StoreEntitySet="Clans">
+          <ScalarProperty Name="ID_clana" ColumnName="ID_clana" />
+          <ScalarProperty Name="OsobaJMBG" ColumnName="OsobaJMBG" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Clanarinas">
+      <EntityTypeMapping TypeName="IsTypeOf(FurnitureDB.Clanarina)">
+        <MappingFragment StoreEntitySet="Clanarinas">
+          <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+          <ScalarProperty Name="Cena" ColumnName="Cena" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Bibliotekars">
+      <EntityTypeMapping TypeName="IsTypeOf(FurnitureDB.Bibliotekar)">
+        <MappingFragment StoreEntitySet="Bibliotekars">
+          <ScalarProperty Name="ID_Bibliotekara" ColumnName="ID_Bibliotekara" />
+          <ScalarProperty Name="Ime" ColumnName="Ime" />
+          <ScalarProperty Name="Prezime" ColumnName="Prezime" />
+          <ScalarProperty Name="BibliotekaPIB" ColumnName="BibliotekaPIB" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Bibliotekas">
+      <EntityTypeMapping TypeName="IsTypeOf(FurnitureDB.Biblioteka)">
+        <MappingFragment StoreEntitySet="Bibliotekas">
+          <ScalarProperty Name="PIB" ColumnName="PIB" />
+          <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+          <ScalarProperty Name="Adresa" ColumnName="Adresa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Knjigas">
+      <EntityTypeMapping TypeName="IsTypeOf(FurnitureDB.Knjiga)">
+        <MappingFragment StoreEntitySet="Knjigas">
+          <ScalarProperty Name="ID_Knjige" ColumnName="ID_Knjige" />
+          <ScalarProperty Name="Autor" ColumnName="Autor" />
+          <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+          <ScalarProperty Name="Kolicina" ColumnName="Kolicina" />
+          <ScalarProperty Name="Zanr" ColumnName="Zanr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Izdanjes">
+      <EntityTypeMapping TypeName="IsTypeOf(FurnitureDB.Izdanje)">
+        <MappingFragment StoreEntitySet="Izdanjes">
+          <ScalarProperty Name="Rbr_Izdanja" ColumnName="Rbr_Izdanja" />
+          <ScalarProperty Name="KnjigaID_Knjige" ColumnName="KnjigaID_Knjige" />
+          <ScalarProperty Name="IzdavacID_Izdavaca" ColumnName="IzdavacID_Izdavaca" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Izdavacs">
+      <EntityTypeMapping TypeName="IsTypeOf(FurnitureDB.Izdavac)">
+        <MappingFragment StoreEntitySet="Izdavacs">
+          <ScalarProperty Name="ID_Izdavaca" ColumnName="ID_Izdavaca" />
+          <ScalarProperty Name="Naziv_Izdavaca" ColumnName="Naziv_Izdavaca" />
+          <ScalarProperty Name="IzdanjeRbr_Izdanja" ColumnName="IzdanjeRbr_Izdanja" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Primeraks">
+      <EntityTypeMapping TypeName="IsTypeOf(FurnitureDB.Primerak)">
+        <MappingFragment StoreEntitySet="Primeraks">
+          <ScalarProperty Name="ID_Primerka" ColumnName="ID_Primerka" />
+          <ScalarProperty Name="IzdanjeRbr_Izdanja" ColumnName="IzdanjeRbr_Izdanja" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Za_Iznajmljivanje">
+      <EntityTypeMapping TypeName="IsTypeOf(FurnitureDB.Za_Iznajmljivanje)">
+        <MappingFragment StoreEntitySet="Za_Iznajmljivanje">
+          <ScalarProperty Name="PrimerakID_Primerka" ColumnName="PrimerakID_Primerka" />
+          <ScalarProperty Name="Datum_Iznajmljivanja" ColumnName="Datum_Iznajmljivanja" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Za_Prodaju">
+      <EntityTypeMapping TypeName="IsTypeOf(FurnitureDB.Za_Prodaju)">
+        <MappingFragment StoreEntitySet="Za_Prodaju">
+          <ScalarProperty Name="PrimerakID_Primerka" ColumnName="PrimerakID_Primerka" />
+          <ScalarProperty Name="Cena_Knjige" ColumnName="Cena_Knjige" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="ClanClanarina" TypeName="FurnitureDB.ClanClanarina" StoreEntitySet="Clans">
+      <EndProperty Name="Clanarina">
+        <ScalarProperty Name="Naziv" ColumnName="Clanarina_Naziv" />
+      </EndProperty>
+      <EndProperty Name="Clan">
+        <ScalarProperty Name="ID_clana" ColumnName="ID_clana" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ClanarinaBibliotekar" TypeName="FurnitureDB.ClanarinaBibliotekar" StoreEntitySet="Bibliotekars">
+      <EndProperty Name="Clanarina">
+        <ScalarProperty Name="Naziv" ColumnName="Clanarina_Naziv" />
+      </EndProperty>
+      <EndProperty Name="Bibliotekar">
+        <ScalarProperty Name="ID_Bibliotekara" ColumnName="ID_Bibliotekara" />
+      </EndProperty>
+      <Condition ColumnName="Clanarina_Naziv" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="BibliotekaClan" TypeName="FurnitureDB.BibliotekaClan" StoreEntitySet="BibliotekaClan">
+      <EndProperty Name="Biblioteka">
+        <ScalarProperty Name="PIB" ColumnName="Bibliotekas_PIB" />
+      </EndProperty>
+      <EndProperty Name="Clan">
+        <ScalarProperty Name="ID_clana" ColumnName="Clans_ID_clana" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="BibliotekaKnjiga" TypeName="FurnitureDB.BibliotekaKnjiga" StoreEntitySet="BibliotekaKnjiga">
+      <EndProperty Name="Biblioteka">
+        <ScalarProperty Name="PIB" ColumnName="Bibliotekas_PIB" />
+      </EndProperty>
+      <EndProperty Name="Knjiga">
+        <ScalarProperty Name="ID_Knjige" ColumnName="Knjigas_ID_Knjige" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="Za_IznajmljivanjeClan" TypeName="FurnitureDB.Za_IznajmljivanjeClan" StoreEntitySet="Clans">
+      <EndProperty Name="Za_Iznajmljivanje">
+        <ScalarProperty Name="PrimerakID_Primerka" ColumnName="Za_Iznajmljivanje_PrimerakID_Primerka" />
+      </EndProperty>
+      <EndProperty Name="Clan">
+        <ScalarProperty Name="ID_clana" ColumnName="ID_clana" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="Za_ProdajuOsoba" TypeName="FurnitureDB.Za_ProdajuOsoba" StoreEntitySet="Za_Prodaju">
+      <EndProperty Name="Osoba">
+        <ScalarProperty Name="JMBG" ColumnName="Osoba_JMBG" />
+      </EndProperty>
+      <EndProperty Name="Za_Prodaju">
+        <ScalarProperty Name="PrimerakID_Primerka" ColumnName="PrimerakID_Primerka" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

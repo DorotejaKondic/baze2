@@ -1,0 +1,366 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FurnitureDB.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="FurnitureDBStoreContainer">
+    <EntitySet Name="Osobas" EntityType="FurnitureDB.Store.Osobas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Clans" EntityType="FurnitureDB.Store.Clans" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Clanarinas" EntityType="FurnitureDB.Store.Clanarinas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Bibliotekars" EntityType="FurnitureDB.Store.Bibliotekars" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Bibliotekas" EntityType="FurnitureDB.Store.Bibliotekas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Knjigas" EntityType="FurnitureDB.Store.Knjigas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Izdanjes" EntityType="FurnitureDB.Store.Izdanjes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Izdavacs" EntityType="FurnitureDB.Store.Izdavacs" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Primeraks" EntityType="FurnitureDB.Store.Primeraks" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Za_Iznajmljivanje" EntityType="FurnitureDB.Store.Za_Iznajmljivanje" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Za_Prodaju" EntityType="FurnitureDB.Store.Za_Prodaju" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="BibliotekaClan" EntityType="FurnitureDB.Store.BibliotekaClan" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="BibliotekaKnjiga" EntityType="FurnitureDB.Store.BibliotekaKnjiga" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="OsobaClan" Association="FurnitureDB.Store.OsobaClan">
+      <End Role="Osoba" EntitySet="Osobas" />
+      <End Role="Clan" EntitySet="Clans" />
+    </AssociationSet>
+    <AssociationSet Name="ClanClanarina" Association="FurnitureDB.Store.ClanClanarina">
+      <End Role="Clan" EntitySet="Clans" />
+      <End Role="Clanarina" EntitySet="Clanarinas" />
+    </AssociationSet>
+    <AssociationSet Name="ClanarinaBibliotekar" Association="FurnitureDB.Store.ClanarinaBibliotekar">
+      <End Role="Clanarina" EntitySet="Clanarinas" />
+      <End Role="Bibliotekar" EntitySet="Bibliotekars" />
+    </AssociationSet>
+    <AssociationSet Name="BibliotekaBibliotekar" Association="FurnitureDB.Store.BibliotekaBibliotekar">
+      <End Role="Biblioteka" EntitySet="Bibliotekas" />
+      <End Role="Bibliotekar" EntitySet="Bibliotekars" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BibliotekaClan_Biblioteka" Association="FurnitureDB.Store.FK_BibliotekaClan_Biblioteka">
+      <End Role="Biblioteka" EntitySet="Bibliotekas" />
+      <End Role="BibliotekaClan" EntitySet="BibliotekaClan" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BibliotekaClan_Clan" Association="FurnitureDB.Store.FK_BibliotekaClan_Clan">
+      <End Role="Clan" EntitySet="Clans" />
+      <End Role="BibliotekaClan" EntitySet="BibliotekaClan" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BibliotekaKnjiga_Biblioteka" Association="FurnitureDB.Store.FK_BibliotekaKnjiga_Biblioteka">
+      <End Role="Biblioteka" EntitySet="Bibliotekas" />
+      <End Role="BibliotekaKnjiga" EntitySet="BibliotekaKnjiga" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BibliotekaKnjiga_Knjiga" Association="FurnitureDB.Store.FK_BibliotekaKnjiga_Knjiga">
+      <End Role="Knjiga" EntitySet="Knjigas" />
+      <End Role="BibliotekaKnjiga" EntitySet="BibliotekaKnjiga" />
+    </AssociationSet>
+    <AssociationSet Name="KnjigaIzdanje" Association="FurnitureDB.Store.KnjigaIzdanje">
+      <End Role="Knjiga" EntitySet="Knjigas" />
+      <End Role="Izdanje" EntitySet="Izdanjes" />
+    </AssociationSet>
+    <AssociationSet Name="IzdanjeIzdavac" Association="FurnitureDB.Store.IzdanjeIzdavac">
+      <End Role="Izdanje" EntitySet="Izdanjes" />
+      <End Role="Izdavac" EntitySet="Izdavacs" />
+    </AssociationSet>
+    <AssociationSet Name="IzdanjePrimerak" Association="FurnitureDB.Store.IzdanjePrimerak">
+      <End Role="Izdanje" EntitySet="Izdanjes" />
+      <End Role="Primerak" EntitySet="Primeraks" />
+    </AssociationSet>
+    <AssociationSet Name="PrimerakZa_Iznajmljivanje" Association="FurnitureDB.Store.PrimerakZa_Iznajmljivanje">
+      <End Role="Primerak" EntitySet="Primeraks" />
+      <End Role="Za_Iznajmljivanje" EntitySet="Za_Iznajmljivanje" />
+    </AssociationSet>
+    <AssociationSet Name="PrimerakZa_Prodaju" Association="FurnitureDB.Store.PrimerakZa_Prodaju">
+      <End Role="Primerak" EntitySet="Primeraks" />
+      <End Role="Za_Prodaju" EntitySet="Za_Prodaju" />
+    </AssociationSet>
+    <AssociationSet Name="Za_IznajmljivanjeClan" Association="FurnitureDB.Store.Za_IznajmljivanjeClan">
+      <End Role="Za_Iznajmljivanje" EntitySet="Za_Iznajmljivanje" />
+      <End Role="Clan" EntitySet="Clans" />
+    </AssociationSet>
+    <AssociationSet Name="Za_ProdajuOsoba" Association="FurnitureDB.Store.Za_ProdajuOsoba">
+      <End Role="Za_Prodaju" EntitySet="Za_Prodaju" />
+      <End Role="Osoba" EntitySet="Osobas" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Osobas">
+    <Key>
+      <PropertyRef Name="JMBG" />
+    </Key>
+    <Property Name="JMBG" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ime" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Prezime" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Mejl" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Adresa" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Clans">
+    <Key>
+      <PropertyRef Name="ID_clana" />
+    </Key>
+    <Property Name="ID_clana" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OsobaJMBG" Type="int" Nullable="false" />
+    <Property Name="Clanarina_Naziv" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Za_Iznajmljivanje_PrimerakID_Primerka" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Clanarinas">
+    <Key>
+      <PropertyRef Name="Naziv" />
+    </Key>
+    <Property Name="Naziv" Type="nvarchar(max)" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Cena" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Bibliotekars">
+    <Key>
+      <PropertyRef Name="ID_Bibliotekara" />
+    </Key>
+    <Property Name="ID_Bibliotekara" Type="nvarchar(max)" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ime" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Prezime" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="BibliotekaPIB" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Clanarina_Naziv" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Bibliotekas">
+    <Key>
+      <PropertyRef Name="PIB" />
+    </Key>
+    <Property Name="PIB" Type="nvarchar(max)" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Naziv" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Adresa" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Knjigas">
+    <Key>
+      <PropertyRef Name="ID_Knjige" />
+    </Key>
+    <Property Name="ID_Knjige" Type="nvarchar(max)" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Autor" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Naziv" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Kolicina" Type="int" Nullable="false" />
+    <Property Name="Zanr" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Izdanjes">
+    <Key>
+      <PropertyRef Name="Rbr_Izdanja" />
+    </Key>
+    <Property Name="Rbr_Izdanja" Type="nvarchar(max)" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KnjigaID_Knjige" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IzdavacID_Izdavaca" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Izdavacs">
+    <Key>
+      <PropertyRef Name="ID_Izdavaca" />
+    </Key>
+    <Property Name="ID_Izdavaca" Type="nvarchar(max)" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Naziv_Izdavaca" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IzdanjeRbr_Izdanja" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Primeraks">
+    <Key>
+      <PropertyRef Name="ID_Primerka" />
+    </Key>
+    <Property Name="ID_Primerka" Type="nvarchar(max)" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IzdanjeRbr_Izdanja" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Za_Iznajmljivanje">
+    <Key>
+      <PropertyRef Name="PrimerakID_Primerka" />
+    </Key>
+    <Property Name="Datum_Iznajmljivanja" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PrimerakID_Primerka" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Za_Prodaju">
+    <Key>
+      <PropertyRef Name="PrimerakID_Primerka" />
+    </Key>
+    <Property Name="Cena_Knjige" Type="bigint" Nullable="false" />
+    <Property Name="PrimerakID_Primerka" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Osoba_JMBG" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BibliotekaClan">
+    <Key>
+      <PropertyRef Name="Bibliotekas_PIB" />
+      <PropertyRef Name="Clans_ID_clana" />
+    </Key>
+    <Property Name="Bibliotekas_PIB" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Clans_ID_clana" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BibliotekaKnjiga">
+    <Key>
+      <PropertyRef Name="Bibliotekas_PIB" />
+      <PropertyRef Name="Knjigas_ID_Knjige" />
+    </Key>
+    <Property Name="Bibliotekas_PIB" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Knjigas_ID_Knjige" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <Association Name="OsobaClan">
+    <End Role="Osoba" Type="FurnitureDB.Store.Osobas" Multiplicity="1" />
+    <End Role="Clan" Type="FurnitureDB.Store.Clans" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Osoba">
+        <PropertyRef Name="JMBG" />
+      </Principal>
+      <Dependent Role="Clan">
+        <PropertyRef Name="OsobaJMBG" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ClanClanarina">
+    <End Role="Clan" Type="FurnitureDB.Store.Clans" Multiplicity="*" />
+    <End Role="Clanarina" Type="FurnitureDB.Store.Clanarinas" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Clanarina">
+        <PropertyRef Name="Naziv" />
+      </Principal>
+      <Dependent Role="Clan">
+        <PropertyRef Name="Clanarina_Naziv" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ClanarinaBibliotekar">
+    <End Role="Clanarina" Type="FurnitureDB.Store.Clanarinas" Multiplicity="0..1" />
+    <End Role="Bibliotekar" Type="FurnitureDB.Store.Bibliotekars" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clanarina">
+        <PropertyRef Name="Naziv" />
+      </Principal>
+      <Dependent Role="Bibliotekar">
+        <PropertyRef Name="Clanarina_Naziv" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="BibliotekaBibliotekar">
+    <End Role="Biblioteka" Type="FurnitureDB.Store.Bibliotekas" Multiplicity="1" />
+    <End Role="Bibliotekar" Type="FurnitureDB.Store.Bibliotekars" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Biblioteka">
+        <PropertyRef Name="PIB" />
+      </Principal>
+      <Dependent Role="Bibliotekar">
+        <PropertyRef Name="BibliotekaPIB" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="KnjigaIzdanje">
+    <End Role="Knjiga" Type="FurnitureDB.Store.Knjigas" Multiplicity="1" />
+    <End Role="Izdanje" Type="FurnitureDB.Store.Izdanjes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Knjiga">
+        <PropertyRef Name="ID_Knjige" />
+      </Principal>
+      <Dependent Role="Izdanje">
+        <PropertyRef Name="KnjigaID_Knjige" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="IzdanjeIzdavac">
+    <End Role="Izdanje" Type="FurnitureDB.Store.Izdanjes" Multiplicity="*" />
+    <End Role="Izdavac" Type="FurnitureDB.Store.Izdavacs" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Izdavac">
+        <PropertyRef Name="ID_Izdavaca" />
+      </Principal>
+      <Dependent Role="Izdanje">
+        <PropertyRef Name="IzdavacID_Izdavaca" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="IzdanjePrimerak">
+    <End Role="Izdanje" Type="FurnitureDB.Store.Izdanjes" Multiplicity="1" />
+    <End Role="Primerak" Type="FurnitureDB.Store.Primeraks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Izdanje">
+        <PropertyRef Name="Rbr_Izdanja" />
+      </Principal>
+      <Dependent Role="Primerak">
+        <PropertyRef Name="IzdanjeRbr_Izdanja" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PrimerakZa_Iznajmljivanje">
+    <End Role="Primerak" Type="FurnitureDB.Store.Primeraks" Multiplicity="1" />
+    <End Role="Za_Iznajmljivanje" Type="FurnitureDB.Store.Za_Iznajmljivanje" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Primerak">
+        <PropertyRef Name="ID_Primerka" />
+      </Principal>
+      <Dependent Role="Za_Iznajmljivanje">
+        <PropertyRef Name="PrimerakID_Primerka" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PrimerakZa_Prodaju">
+    <End Role="Primerak" Type="FurnitureDB.Store.Primeraks" Multiplicity="1" />
+    <End Role="Za_Prodaju" Type="FurnitureDB.Store.Za_Prodaju" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Primerak">
+        <PropertyRef Name="ID_Primerka" />
+      </Principal>
+      <Dependent Role="Za_Prodaju">
+        <PropertyRef Name="PrimerakID_Primerka" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Za_IznajmljivanjeClan">
+    <End Role="Za_Iznajmljivanje" Type="FurnitureDB.Store.Za_Iznajmljivanje" Multiplicity="1" />
+    <End Role="Clan" Type="FurnitureDB.Store.Clans" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Za_Iznajmljivanje">
+        <PropertyRef Name="PrimerakID_Primerka" />
+      </Principal>
+      <Dependent Role="Clan">
+        <PropertyRef Name="Za_Iznajmljivanje_PrimerakID_Primerka" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Za_ProdajuOsoba">
+    <End Role="Za_Prodaju" Type="FurnitureDB.Store.Za_Prodaju" Multiplicity="*" />
+    <End Role="Osoba" Type="FurnitureDB.Store.Osobas" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Osoba">
+        <PropertyRef Name="JMBG" />
+      </Principal>
+      <Dependent Role="Za_Prodaju">
+        <PropertyRef Name="Osoba_JMBG" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BibliotekaClan_Biblioteka">
+    <End Role="Biblioteka" Type="FurnitureDB.Store.Bibliotekas" Multiplicity="1" />
+    <End Role="BibliotekaClan" Type="FurnitureDB.Store.BibliotekaClan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Biblioteka">
+        <PropertyRef Name="PIB" />
+      </Principal>
+      <Dependent Role="BibliotekaClan">
+        <PropertyRef Name="Bibliotekas_PIB" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BibliotekaClan_Clan">
+    <End Role="BibliotekaClan" Type="FurnitureDB.Store.BibliotekaClan" Multiplicity="*" />
+    <End Role="Clan" Type="FurnitureDB.Store.Clans" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Clan">
+        <PropertyRef Name="ID_clana" />
+      </Principal>
+      <Dependent Role="BibliotekaClan">
+        <PropertyRef Name="Clans_ID_clana" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BibliotekaKnjiga_Biblioteka">
+    <End Role="Biblioteka" Type="FurnitureDB.Store.Bibliotekas" Multiplicity="1" />
+    <End Role="BibliotekaKnjiga" Type="FurnitureDB.Store.BibliotekaKnjiga" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Biblioteka">
+        <PropertyRef Name="PIB" />
+      </Principal>
+      <Dependent Role="BibliotekaKnjiga">
+        <PropertyRef Name="Bibliotekas_PIB" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BibliotekaKnjiga_Knjiga">
+    <End Role="BibliotekaKnjiga" Type="FurnitureDB.Store.BibliotekaKnjiga" Multiplicity="*" />
+    <End Role="Knjiga" Type="FurnitureDB.Store.Knjigas" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Knjiga">
+        <PropertyRef Name="ID_Knjige" />
+      </Principal>
+      <Dependent Role="BibliotekaKnjiga">
+        <PropertyRef Name="Knjigas_ID_Knjige" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
